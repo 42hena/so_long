@@ -19,11 +19,6 @@ static void init_img_map(t_info *info)
     info->img_tile = mlx_xpm_file_to_image(info->mlx, "./img/tile.xpm", &width, &height);
     info->img_exit = mlx_xpm_file_to_image(info->mlx, "./img/exit.xpm", &width, &height);
     info->img_coin = mlx_xpm_file_to_image(info->mlx, "./img/coin.xpm", &width, &height);
-
-static void init_img(t_info *info)
-{
-	init_img_player(info);
-	init_img_map(info);
 }
 
 static void init_pos(t_param *param)
@@ -35,7 +30,15 @@ static void init_pos(t_param *param)
 void init_info(t_info *info)
 {
 	info->mlx = mlx_init();
-	init_img(info);
+	info->playing = true;
+	info->map = NULL;
+	info->buf = NULL;
+	info->exit_cnt = 0;
+	info->player_cnt = 0;
+	info->collect_cnt = 0;
+	info->move_cnt = 0;
+	init_img_player(info);
+	init_img_map(info);
 	init_pos(&info->pos);
 	init_pos(&info->exit_pos);
 }
