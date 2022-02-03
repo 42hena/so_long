@@ -6,11 +6,11 @@
 /*   By: hena <hena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:51:55 by hena              #+#    #+#             */
-/*   Updated: 2022/02/03 14:52:44 by hena             ###   ########.fr       */
+/*   Updated: 2022/02/03 16:53:33 by hena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *s)
 {
 	int	i;
 

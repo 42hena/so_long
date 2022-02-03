@@ -41,11 +41,8 @@ typedef struct s_info{
 }				t_info;
 
 int		ft_strcmp(char *arr1, char *arr2);
-int		ft_strlen(const char *s);
+int		ft_strlen(char *s);
 void	ft_strcpy(char *dst, char *src);
-
-//print
-void	print(t_info *info);
 
 // error
 void	error_exit(char *error_command);
@@ -78,11 +75,10 @@ void	move_down(t_info *info, int x, int y);
 void	move_left(t_info *info, int x, int y);
 void	move_right(t_info *info, int x, int y);
 
-# define	BUFF_SIZE 10000
+# define BUFF_SIZE 1000
 # define X_EVENT_KEY_PRESS	2
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_KEY_EXIT	17
-
 # define KEY_ESC				53
 # define KEY_W				13
 # define KEY_A				0

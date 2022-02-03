@@ -16,6 +16,17 @@ void	is_around_wall(t_info *info)
 
 	row = info->map_width;
 	col = info->map_height;
+
+	printf("is_arround\n");
+	for (int i = 0 ; i < col ; ++i)
+	{
+		for (int j = 0 ; j < row ; ++j)
+		{
+			printf("%c", info->map[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
 	i = -1;
 	j = -1;
 	while (++i < col)
@@ -23,8 +34,12 @@ void	is_around_wall(t_info *info)
 		if (i == 0 || i == col - 1)
 		{
 			while (++j < row)
+			{
 				if (!is_wall(info->map[i][j]))
+				{
 					error_exit("not wall");
+				}
+			}
 			j = -1;
 		}
 		else

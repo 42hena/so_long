@@ -27,18 +27,19 @@ static void	read_file_save(t_info *info, int fd)
 	char	buf[BUFF_SIZE + 1];
 	char	*tmp;
 
-	info->buf = NULL;
 	while (true)
 	{
 		n = read(fd, buf, BUFF_SIZE);
 		if (n <= 0)
 			break ;
 		buf[n] = 0;
+		printf("\nlen:%d\n", n+ ft_strlen(info->buf));
 		tmp = (char *)malloc(sizeof(char) * (n + ft_strlen(info->buf) + 1));
 		tmp[n + ft_strlen(info->buf)] = 0;
 		ft_strcpy(tmp, buf);
 		info->buf = tmp;
 	}
+	printf("readbuf \n%s\n", buf);
 	if (n == -1)
 		error_exit("Cant read file");
 }
@@ -59,7 +60,9 @@ int	file_handleing(t_info *info)
 	int	fd;
 
 	fd = open_file(info);
+	printf("fd:%d\n", fd);
 	read_file_save(info, fd);
+	printf("\ninfobuf:\n%s\n", info->buf);
 	get_map_size(info);
 	create_2D_map(info);
 	insert_2D_map(info);

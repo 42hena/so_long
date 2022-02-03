@@ -6,7 +6,7 @@
 /*   By: hena <hena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:23:48 by hena              #+#    #+#             */
-/*   Updated: 2022/02/03 14:23:53 by hena             ###   ########.fr       */
+/*   Updated: 2022/02/03 17:20:24 by hena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,16 @@ int	main(int argc, char **argv)
 	init_info(&info);
 	file_handleing(&info);
 	map_check(&info);
+	for (int i = 0 ; i < info.map_height ; ++i)
+	{
+		for (int j = 0 ; j < info.map_width ; ++j)
+		{
+			printf("%c", info.map[i][j]);
+		}	
+		printf("\n");
+	}
+	printf("%d %d\n", info.pos.x, info.pos.y);
+	printf("%d %d\n", info.exit_pos.x, info.exit_pos.y);	
 	init_window(&info);
 	mlx_hook(info.win, X_EVENT_KEY_PRESS, 0, &key_press, &info);
 	mlx_hook(info.win, X_EVENT_KEY_EXIT, 0, &close_window, &info);

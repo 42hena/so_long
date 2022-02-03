@@ -6,7 +6,7 @@
 /*   By: hena <hena@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:27:32 by hena              #+#    #+#             */
-/*   Updated: 2022/02/03 14:27:33 by hena             ###   ########.fr       */
+/*   Updated: 2022/02/03 17:18:03 by hena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ void	insert_2D_map(t_info *info)
 		}
 		i++;
 	}
+	printf("insert\n");
+	for (int i = 0 ; i < info->map_height ; ++i)
+	{
+		for (int j = 0 ; j < info->map_width ; ++j)
+		{
+			printf("%c", info->map[i][j]);
+		}
+		printf("\n");
+	}
 }
 
 void	create_2D_map(t_info *info)
@@ -48,9 +57,10 @@ void	create_2D_map(t_info *info)
 	row = info->map_width;
 	info->map = (char **)malloc(sizeof(char *) * col);
 	i = -1;
+	printf("%d %d\n", row, col);
 	while (++i < col)
 	{
-		info->map[i] = (char *)malloc(sizeof(char) * (row / col + 1));
-		info->map[i][(row / col)] = '\0';
+		info->map[i] = (char *)malloc(sizeof(char) * (row + 1));
+		info->map[i][(row)] = '\0';
 	}
 }
