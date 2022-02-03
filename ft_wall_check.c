@@ -1,20 +1,19 @@
 #include "so_long.h"
 
-int is_wall(char c)
+int	is_wall(char c)
 {
 	if (c == '1')
 		return (1);
 	return (0);
 }
 
-void is_around_wall(t_info *info)
+void	is_around_wall(t_info *info)
 {
-	int i;
-	int j;
-	int row;
-	int col;
+	int	i;
+	int	j;
+	int	row;
+	int	col;
 
-	write(1, "fasdf", 5);
 	row = info->map_width;
 	col = info->map_height;
 	i = -1;
@@ -32,6 +31,4 @@ void is_around_wall(t_info *info)
 			if (!(is_wall(info->map[i][0]) && is_wall(info->map[i][row - 1])))
 				error_exit("not wall");
 	}
-	write(1, "fasdf", 5);
-
 }

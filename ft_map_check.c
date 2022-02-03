@@ -1,9 +1,9 @@
 #include "so_long.h"
 
-void get_pos_info(t_info *info)
+void	get_pos_info(t_info *info)
 {
-	int i;
-	int j;	
+	int	i;
+	int	j;	
 
 	i = 0;
 	j = 0;
@@ -26,7 +26,7 @@ void get_pos_info(t_info *info)
 	}
 }
 
-void check_info(t_info *info)
+void	check_info(t_info *info)
 {
 	if (info->player_cnt != 1)
 		error_exit("player Cnt is not 1");
@@ -38,9 +38,9 @@ void check_info(t_info *info)
 
 static void	get_count_info(t_info *info)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
 	j = 0;
 	while (++i < info->map_height - 1)
@@ -58,12 +58,10 @@ static void	get_count_info(t_info *info)
 	}
 }
 
-void map_check(t_info *info)
+void	map_check(t_info *info)
 {
 	is_around_wall(info);
-	printf("%d %d\n", info->map_width, info->map_height);
 	get_count_info(info);
-	printf("%d %d\n", info->map_width, info->map_height);
 	check_info(info);
 	get_pos_info(info);
 }

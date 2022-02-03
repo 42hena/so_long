@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parameter.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hena <hena@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/03 14:28:38 by hena              #+#    #+#             */
+/*   Updated: 2022/02/03 14:28:39 by hena             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static void	check_argc(int argc)
@@ -16,8 +28,7 @@ static void	check_filename(char *name, t_info *info)
 	info->map_name = name;
 }
 
-// argc, filename_check
-void check_parameter(int argc, char *name, t_info *info)
+void	check_parameter(int argc, char *name, t_info *info)
 {
 	check_argc(argc);
 	check_filename(name, info);
