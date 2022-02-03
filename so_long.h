@@ -78,7 +78,7 @@ void	move_down(t_info *info, int x, int y);
 void	move_left(t_info *info, int x, int y);
 void	move_right(t_info *info, int x, int y);
 
-# define	BUFF_SIZE 1024
+# define	BUFF_SIZE 10000
 # define X_EVENT_KEY_PRESS	2
 # define X_EVENT_KEY_RELEASE 3
 # define X_EVENT_KEY_EXIT	17
